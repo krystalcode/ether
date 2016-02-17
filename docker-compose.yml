@@ -1,0 +1,17 @@
+elasticsearch:
+  image: krystalcode/o_elasticsearch
+  container_name: ether_elasticsearch
+  volumes:
+    - ./docker/.volumes/elasticsearch:/usr/share/elasticsearch/data
+
+node:
+  build: ./docker
+  dockerfile: Dockerfile-node
+  container_name: ether_node
+  volumes:
+    - ./sails:/src
+  links:
+    - elasticsearch
+  environment:
+    - VIRTUAL_HOST=ether.localhost
+  command: sleep infinity
