@@ -9,7 +9,7 @@ node:
   dockerfile: Dockerfile-node
   container_name: ether_node
   volumes:
-    - ./sails:/src
+    - .:/src
   links:
     - elasticsearch
   environment:
