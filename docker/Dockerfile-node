@@ -10,7 +10,7 @@ ENV NODE_VERSION 5.0.0
 # Globally install additional node tools by the project.
 RUN . $HOME/.nvm/nvm.sh && \
     nvm use ${NODE_VERSION} && \
-    npm install -g bower gulp
+    npm install -g bower gulp typescript
 
 # Run the application.
 CMD . ${HOME}/.nvm/nvm.sh && \
